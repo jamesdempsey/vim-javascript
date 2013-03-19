@@ -116,6 +116,7 @@ syntax keyword jsBranch         break continue switch case default
 syntax keyword jsStatement      try catch throw with finally
 
 syntax keyword jsGlobalObjects  Array Boolean Date Function Infinity JavaArray JavaClass JavaObject JavaPackage Math Number NaN Object Packages RegExp String Undefined java netscape sun
+syntax match   jsGlobalObjects  /\<\u\w*\>/ display
 
 syntax keyword jsExceptions     Error EvalError RangeError ReferenceError SyntaxError TypeError URIError
 
@@ -247,7 +248,7 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsPrototype            Type
   HiLink jsConditional          Conditional
   HiLink jsBranch               Conditional
-  HiLink jsReturn               Type
+  HiLink jsReturn               Statement
   HiLink jsRepeat               Repeat
   HiLink jsStatement            Statement
   HiLink jsFunction             Function
@@ -258,12 +259,12 @@ if version >= 508 || !exists("did_javascript_syn_inits")
   HiLink jsParensErrC           Error
   HiLink jsOperator             Operator
   HiLink jsType                 Type
-  HiLink jsThis                 Type
+  HiLink jsThis                 Statement
   HiLink jsNull                 Type
   HiLink jsNumber               Number
   HiLink jsFloat                Number
   HiLink jsBoolean              Boolean
-  HiLink jsLabel                Label
+  HiLink jsLabel                Constant
   HiLink jsSpecial              Special
   HiLink jsSource               Special
   HiLink jsCommonJS             Include
